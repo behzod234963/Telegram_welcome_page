@@ -3,12 +3,10 @@ package com.example.telegramwelcomepage
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View.GONE
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
+import com.airbnb.lottie.LottieAnimationView
 import com.example.telegramwelcomepage.fragments.BlackFragment
 import com.example.telegramwelcomepage.fragments.CloudBasedFragment
 import com.example.telegramwelcomepage.fragments.CloudBasedFragmentDark
@@ -38,11 +36,13 @@ class MainActivity : AppCompatActivity() {
         var switch:Int=1
         val ivTheme:ImageView=findViewById(R.id.ivTheme)
         val btnStart:Button=findViewById(R.id.btnStart)
-        var whiteFragment=WhiteFragment()
-        var blackFragment=BlackFragment()
+        val lavBtnStart:LottieAnimationView=findViewById(R.id.lavBtnStart)
+        val whiteFragment=WhiteFragment()
+        val blackFragment=BlackFragment()
 
         btnStart.setOnClickListener {
 
+            lavBtnStart.playAnimation()
             switch++
 
             when(switch){
@@ -50,16 +50,14 @@ class MainActivity : AppCompatActivity() {
                 1->{
 
                     if (theme==1){
-
-                        blackFragment
+                        
                         setTheme(blackFragment)
                         val telegramFragmentDark=TelegramFragmentDark()
                         setFragment(telegramFragmentDark)
                         ivTheme.setImageResource(R.drawable.pic_daytheme)
 
                     }else{
-
-                        whiteFragment=WhiteFragment()
+                        
                         setTheme(whiteFragment)
                         val telegramFragment=TelegramFragment()
                         setFragment(telegramFragment)
@@ -72,16 +70,14 @@ class MainActivity : AppCompatActivity() {
                 2->{
 
                     if (theme==1){
-
-                        blackFragment
+                        
                         setTheme(blackFragment)
                         val fastFragmentDark=FastFragmentDark()
                         setFragment(fastFragmentDark)
                         ivTheme.setImageResource(R.drawable.pic_daytheme)
 
                     }else{
-
-                        whiteFragment=WhiteFragment()
+                        
                         setTheme(whiteFragment)
                         val fastFragment = FastFragment()
                         setFragment(fastFragment)
@@ -94,16 +90,18 @@ class MainActivity : AppCompatActivity() {
                 3->{
 
                     if (theme==1){
-
-                        blackFragment
+                        
                         setTheme(blackFragment)
                         val giftFragmentDark=GiftFragmentDark()
                         setFragment(giftFragmentDark)
+                        ivTheme.setImageResource(R.drawable.pic_daytheme)
 
                     }else{
 
+                        setTheme(whiteFragment)
                         val giftFragment=GiftFragment()
                         setFragment(giftFragment)
+                        ivTheme.setImageResource(R.drawable.pic_darktheme)
 
                     }
 
@@ -113,13 +111,17 @@ class MainActivity : AppCompatActivity() {
 
                     if (theme==1){
 
+                        setTheme(blackFragment)
                         val powerfulFragmentDark=PowerfulFragmentDark()
                         setFragment(powerfulFragmentDark)
+                        ivTheme.setImageResource(R.drawable.pic_daytheme)
 
                     }else{
 
+                        setTheme(whiteFragment)
                         val powerfulFragment=PowerfulFragment()
                         setFragment(powerfulFragment)
+                        ivTheme.setImageResource(R.drawable.pic_darktheme)
 
                     }
 
@@ -129,13 +131,17 @@ class MainActivity : AppCompatActivity() {
 
                     if (theme==1){
 
+                        setTheme(blackFragment)
                         val secureFragmentDark=SecureFragmentDark()
                         setFragment(secureFragmentDark)
+                        ivTheme.setImageResource(R.drawable.pic_daytheme)
 
                     }else{
 
+                        setTheme(whiteFragment)
                         val secureFragment=SecureFragment()
                         setFragment(secureFragment)
+                        ivTheme.setImageResource(R.drawable.pic_darktheme)
 
                     }
 
@@ -145,13 +151,17 @@ class MainActivity : AppCompatActivity() {
 
                     if (theme==1){
 
+                        setTheme(blackFragment)
                         val cloudBasedFragmentDark=CloudBasedFragmentDark()
                         setFragment(cloudBasedFragmentDark)
+                        ivTheme.setImageResource(R.drawable.pic_daytheme)
 
                     }else{
 
+                        setTheme(whiteFragment)
                         val cloudBasedFragment=CloudBasedFragment()
                         setFragment(cloudBasedFragment)
+                        ivTheme.setImageResource(R.drawable.pic_darktheme)
 
                     }
 
@@ -169,8 +179,7 @@ class MainActivity : AppCompatActivity() {
             when(theme){
 
                 1->{
-
-                    val blackFragment=BlackFragment()
+                    
                     setTheme(blackFragment)
                     val telegramFragmentDark=TelegramFragmentDark()
                     setFragment(telegramFragmentDark)
@@ -189,8 +198,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 2->{
-
-                    val whiteFragment=WhiteFragment()
+                    
                     setTheme(whiteFragment)
                     val telegramFragment=TelegramFragment()
                     setFragment(telegramFragment)
