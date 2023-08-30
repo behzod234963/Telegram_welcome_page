@@ -230,7 +230,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setTheme(theme:Fragment){
+    private fun setTheme(theme:Fragment){
 
         supportFragmentManager.beginTransaction().replace(R.id.rlRelativeLayout,theme).commit()
 
